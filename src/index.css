@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-    background-color: white;
+:root {
+  background-color: white;
+}
+
+@layer components {
+  .active {
+    @apply text-red-700 font-extrabold text-xl;
+  }
+
+  .default {
+    @apply text-white font-extrabold text-xl;
+  }
 }
