@@ -48,8 +48,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="bg-black">
-      <div className="fixed z-10 w-full bg-black bg-opacity-30">
+    <nav className="">
+      <div className="fixed z-10 w-full bg-solid bg-opacity-30">
         <div className="navbar container mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
@@ -93,7 +93,7 @@ const Navbar = () => {
           </div>
           <div className="navbar-center hidden lg:flex"></div>
           <div className="navbar-end">
-            <ul className="menu menu-horizontal px-1 sm:hidden">{navItem}</ul>
+            <ul className="menu menu-horizontal px-1">{navItem}</ul>
             {/* <FiShoppingBag className="text-2xl text-my-gray mr-5" /> */}
             {/* <IoSearchOutline className="text-2xl text-my-gray mr-5" /> */}
 
