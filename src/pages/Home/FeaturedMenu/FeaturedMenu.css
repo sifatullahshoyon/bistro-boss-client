@@ -1,0 +1,8 @@
+.featureImg{
+    background-image: linear-gradient(#151515 , #1515157a) , url('../../../assets/home/featured.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 850px;
+    width: 100%;
+};
