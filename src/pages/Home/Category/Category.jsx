@@ -12,7 +12,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const Category = () => {
   return (
-    <section className="py-10 px-5">
+    <section className="py-20 px-5">
       <div>
         <SectionTitle
           subHeading={"From 11:00am to 10:00pm"}
