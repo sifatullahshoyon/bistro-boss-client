@@ -6,6 +6,12 @@
   background-color: white;
 }
 
+.menuItemImg{
+  width: 118px;
+  height: 104px;
+  border-radius: 0 200px 200px 200px;
+}
+
 @layer components {
   .active {
     @apply text-red-700 font-extrabold text-xl;
