@@ -7,10 +7,14 @@ import CallUs from "./CallUs/CallUs";
 import RecommendsMenu from "../RecommendsMenu/RecommendsMenu";
 import FeaturedMenu from "../FeaturedMenu/FeaturedMenu";
 import Testimonials from "../Testimonials/Testimonials";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>Bistro Boss | Home</title>
+      </Helmet>
       <Banner />
       <div className="container mx-auto">
         <Category />

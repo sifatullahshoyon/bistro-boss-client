@@ -31,7 +31,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/"
+          to="/menu"
           className={({ isActive }) => (isActive ? "default" : "active")}
         >
           OUR MENU
