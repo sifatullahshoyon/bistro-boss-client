@@ -23,7 +23,7 @@ const Testimonials = () => {
           heading="TESTIMONIALS"
         ></SectionTitle>
       </div>
-      <div>
+      <div data-aos="fade-down">
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
           {reviews?.map((review) => (
             <SwiperSlide key={review._id}>

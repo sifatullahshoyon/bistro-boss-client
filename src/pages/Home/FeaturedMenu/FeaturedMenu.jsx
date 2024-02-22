@@ -16,14 +16,20 @@ const FeaturedMenu = () => {
             </h3>
           </div>
           <div className="md:flex justify-between  h-[850px] px-28">
-            <div className="text-right flex-auto lg:w-1/2 w-full">
+            <div
+              data-aos="fade-right"
+              className="text-right flex-auto lg:w-1/2 w-full"
+            >
               <img
                 src={Img}
                 alt=""
                 className="h-[400px] float-right object-cover"
               />
             </div>
-            <div className="lg:w-[604px] w-full pl-10 lg:pt-11 overflow-auto">
+            <div
+              data-aos="fade-left"
+              className="lg:w-[604px] w-full pl-10 lg:pt-11 overflow-auto"
+            >
               <p className="font-inter font-normal text-2xl text-white">
                 March 20, 2023
               </p>

@@ -4,7 +4,7 @@ import "./About.css";
 const About = () => {
   return (
     <section className="py-20 px-5">
-      <div className="chefService ">
+      <div className="chefService bg-fixed">
         <div className="flex flex-col justify-center items-center h-full text-center shadow-md">
           <div className="bg-white p-5 md:p-10 lg:p-20 overflow-auto">
             <h3 className="font-cinzel text-4xl text-black pb-3">

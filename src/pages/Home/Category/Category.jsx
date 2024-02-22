@@ -19,7 +19,7 @@ const Category = () => {
           heading={"ORDER ONLINE"}
         ></SectionTitle>
       </div>
-      <div>
+      <div data-aos="fade-up" data-aos-duration="3000">
         <Swiper
           slidesPerView={1}
           spaceBetween={10}
