@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import MenuItem from "../Home/Shared/MenuItem/MenuItem";
+import useMenu from "../../../hooks/useMenu";
 
 const PopularMenu = () => {
-  const [menu, setMenu] = useState([]);
-  useEffect(() => {
-    fetch(`data/menu.json`)
-      .then((res) => res.json())
-      .then((data) => {
-        const menuItem = data?.filter((item) => item.category === "popular");
-        setMenu(menuItem);
-      });
-  }, []);
+  // useMenu is the custom hooks.
+  const [menu] = useMenu();
+  const popular = menu?.filter((item) => item.category === "popular");
+
   return (
     <section className="py-20 px-5">
       <div>
@@ -25,7 +21,7 @@ const PopularMenu = () => {
         data-aos-duration="3000"
         className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8"
       >
-        {menu?.map((item) => (
+        {popular?.map((item) => (
           <MenuItem key={item._id} item={item} />
         ))}
       </div>
