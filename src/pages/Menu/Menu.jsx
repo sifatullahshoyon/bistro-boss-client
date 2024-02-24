@@ -1,13 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import Cover from "../Home/Home/Shared/Cover/Cover";
+import menuImg from "../../assets/menu/banner3.jpg";
 
 const Menu = () => {
   return (
     <section>
       <Helmet>
-        <title>Hello World</title>
+        <title>Bistro Boss | Menu</title>
       </Helmet>
-      Menu Page
+      <div>
+        <Cover bgImg={menuImg} title='our menu' details='Would you like to try a dish?'/>
+      </div>
     </section>
   );
 };

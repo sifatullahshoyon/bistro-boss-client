@@ -5,7 +5,7 @@ const Navbar = () => {
   const user = {};
   const navItem = (
     <>
-      <li>
+      <li className="mr-2">
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "default" : "active")}
@@ -13,7 +13,7 @@ const Navbar = () => {
           HOME
         </NavLink>
       </li>
-      <li>
+      <li className="mr-2">
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "default" : "active")}
@@ -21,7 +21,7 @@ const Navbar = () => {
           CONTACT US
         </NavLink>
       </li>
-      <li>
+      <li className="mr-2">
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "default" : "active")}
@@ -29,7 +29,7 @@ const Navbar = () => {
           DASHBOARD
         </NavLink>
       </li>
-      <li>
+      <li className="mr-2">
         <NavLink
           to="/menu"
           className={({ isActive }) => (isActive ? "default" : "active")}
@@ -37,7 +37,7 @@ const Navbar = () => {
           OUR MENU
         </NavLink>
       </li>
-      <li>
+      <li className="mr-2">
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "default" : "active")}
