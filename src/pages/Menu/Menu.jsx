@@ -10,7 +10,6 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import MenuCategory from "./MenuCategory/MenuCategory";
 import useMenu from "../../hooks/useMenu";
 
-
 const Menu = () => {
   const [menu] = useMenu();
   const offered = menu?.filter((item) => item.category === "offered");
@@ -35,12 +34,7 @@ const Menu = () => {
       {/* Offered Item Section */}
       <div className="container mx-auto py-20 px-5">
         <SectionTitle subHeading="Don't Miss" heading="TODAY'S OFFER" />
-        <MenuCategory items={offered} />
-        <div className="mt-7 text-center">
-          <button className="btn bg-white text-light-gray outline-none border-0 border-b border-text-light-gray hover:bg-white font-medium font-inter text-xl uppercase shadow-lg">
-            ORDER YOUR FAVOURITE FOOD
-          </button>
-        </div>
+        <MenuCategory items={offered} title={"salad"} />
       </div>
       {/* Dessert Item Section */}
       <div>
@@ -50,12 +44,7 @@ const Menu = () => {
           longDetails="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         />
         <div className="container mx-auto px-5 py-10">
-          <MenuCategory items={desserts} />
-          <div className="mt-7 text-center">
-            <button className="btn bg-white text-light-gray outline-none border-0 border-b border-text-light-gray hover:bg-white font-medium font-inter text-xl uppercase shadow-lg">
-              ORDER YOUR FAVOURITE FOOD
-            </button>
-          </div>
+          <MenuCategory items={desserts} title={"desserts"} />
         </div>
       </div>
       {/* Pizza Item Section */}
@@ -66,12 +55,7 @@ const Menu = () => {
           longDetails="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         />
         <div className="container mx-auto px-5 py-10">
-          <MenuCategory items={pizza} />
-          <div className="mt-7 text-center">
-            <button className="btn bg-white text-light-gray outline-none border-0 border-b border-text-light-gray hover:bg-white font-medium font-inter text-xl uppercase shadow-lg">
-              ORDER YOUR FAVOURITE FOOD
-            </button>
-          </div>
+          <MenuCategory items={pizza} title={"pizza"} />
         </div>
       </div>
       {/* Salad Item Section */}
@@ -82,12 +66,7 @@ const Menu = () => {
           longDetails="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         />
         <div className="container mx-auto px-5 py-10">
-          <MenuCategory items={salad} />
-          <div className="mt-7 text-center">
-            <button className="btn bg-white text-light-gray outline-none border-0 border-b border-text-light-gray hover:bg-white font-medium font-inter text-xl uppercase shadow-lg">
-              ORDER YOUR FAVOURITE FOOD
-            </button>
-          </div>
+          <MenuCategory items={salad} title={"salad"} />
         </div>
       </div>
       {/* Soup Item Section */}
@@ -98,12 +77,7 @@ const Menu = () => {
           longDetails="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         />
         <div className="container mx-auto px-5 py-10">
-          <MenuCategory items={soup} />
-          <div className="mt-7 text-center">
-            <button className="btn bg-white text-light-gray outline-none border-0 border-b border-text-light-gray hover:bg-white font-medium font-inter text-xl uppercase shadow-lg">
-              ORDER YOUR FAVOURITE FOOD
-            </button>
-          </div>
+          <MenuCategory items={soup} title={"soup"} />
         </div>
       </div>
     </section>

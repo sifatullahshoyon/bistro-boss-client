@@ -1,9 +1,10 @@
 import React from "react";
 import MenuItem from "../../Home/Home/Shared/MenuItem/MenuItem";
+import { Link } from "react-router-dom";
 
-const MenuCategory = ({ items }) => {
+const MenuCategory = ({ items, title, img, subTitle, longDetails }) => {
   return (
-    <div>
+    <>
       <div
         data-aos="fade-up"
         data-aos-duration="3000"
@@ -13,7 +14,14 @@ const MenuCategory = ({ items }) => {
           <MenuItem key={item._id} item={item} />
         ))}
       </div>
-    </div>
+      <Link to={`/order/${title}`}>
+        <div className="mt-7 text-center">
+          <button className="btn bg-white text-light-gray outline-none border-0 border-b border-text-light-gray hover:bg-white font-medium font-inter text-xl uppercase shadow-lg">
+            ORDER YOUR FAVOURITE FOOD
+          </button>
+        </div>
+      </Link>
+    </>
   );
 };
 
