@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import shoppingIcon from "../../../../../assets/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png"
 
 const Navbar = () => {
   const user = {};
@@ -43,6 +44,22 @@ const Navbar = () => {
           className={({ isActive }) => (isActive ? "default" : "active")}
         >
           OUR SHOP
+        </NavLink>
+      </li>
+      <li className="mr-2">
+        <NavLink
+          to="/"
+          // className={({ isActive }) => (isActive ? "default" : "active")}
+        >
+          <img src={shoppingIcon} className="h-8" alt="" />
+        </NavLink>
+      </li>
+      <li className="mr-2">
+        <NavLink
+          to="/login"
+          className={({ isActive }) => (isActive ? "default" : "active")}
+        >
+          SIGN IN
         </NavLink>
       </li>
     </>
@@ -92,7 +109,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex"></div>
-          <div className="navbar-end">
+          <div className="navbar-center">
             <ul className="menu menu-horizontal px-1">{navItem}</ul>
             {/* <FiShoppingBag className="text-2xl text-my-gray mr-5" /> */}
             {/* <IoSearchOutline className="text-2xl text-my-gray mr-5" /> */}
