@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import shoppingIcon from "../../../../../assets/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png"
+import { AuthContext } from "../../../../../providers/AuthProvider";
 
 const Navbar = () => {
-  const user = {};
+  const {user , logOut} = useContext(AuthContext);
   const navItem = (
     <>
       <li className="mr-2">
@@ -54,7 +55,18 @@ const Navbar = () => {
           <img src={shoppingIcon} className="h-8" alt="" />
         </NavLink>
       </li>
-      <li className="mr-2">
+      {
+        user ? <>
+        <li className="mr-2">
+        <NavLink
+          to="/login"
+          className={({ isActive }) => (isActive ? "default" : "active")}
+        >
+          SIGN OUT
+        </NavLink>
+      </li>
+        </> : <>
+        <li className="mr-2">
         <NavLink
           to="/login"
           className={({ isActive }) => (isActive ? "default" : "active")}
@@ -62,6 +74,8 @@ const Navbar = () => {
           SIGN IN
         </NavLink>
       </li>
+        </>
+      }
     </>
   );
   return (
