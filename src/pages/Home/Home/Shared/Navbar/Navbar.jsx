@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import shoppingIcon from "../../../../../assets/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png"
+import shoppingIcon from "../../../../../assets/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png";
 import { AuthContext } from "../../../../../providers/AuthProvider";
 
 const Navbar = () => {
-  const {user , logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+    .then(() => {})
+    .catch((error) => console.error(error.message));
+  };
   const navItem = (
     <>
       <li className="mr-2">
@@ -17,7 +23,7 @@ const Navbar = () => {
       </li>
       <li className="mr-2">
         <NavLink
-          to="/"
+          to="/contact"
           className={({ isActive }) => (isActive ? "default" : "active")}
         >
           CONTACT US
@@ -55,27 +61,30 @@ const Navbar = () => {
           <img src={shoppingIcon} className="h-8" alt="" />
         </NavLink>
       </li>
-      {
-        user ? <>
-        <li className="mr-2">
-        <NavLink
-          to="/login"
-          className={({ isActive }) => (isActive ? "default" : "active")}
-        >
-          SIGN OUT
-        </NavLink>
-      </li>
-        </> : <>
-        <li className="mr-2">
-        <NavLink
-          to="/login"
-          className={({ isActive }) => (isActive ? "default" : "active")}
-        >
-          SIGN IN
-        </NavLink>
-      </li>
+      {user ? (
+        <>
+          <li className="mr-2">
+            <NavLink
+              to="/login"
+              onClick={handleLogout}
+              className={({ isActive }) => (isActive ? "default" : "active")}
+            >
+              SIGN OUT
+            </NavLink>
+          </li>
         </>
-      }
+      ) : (
+        <>
+          <li className="mr-2">
+            <NavLink
+              to="/login"
+              className={({ isActive }) => (isActive ? "default" : "active")}
+            >
+              SIGN IN
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
