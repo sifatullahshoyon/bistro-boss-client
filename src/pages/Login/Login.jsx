@@ -9,15 +9,15 @@ import {
 } from "react-simple-captcha";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location?.state?.from?.pathName || '/';
+  const from = location?.state?.from?.pathName || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -30,23 +30,23 @@ const Login = () => {
       .then((result) => {
         const user = result?.user;
         Swal.fire({
-            title: "User Login Successfully",
-            showClass: {
-              popup: `
+          title: "User Login Successfully",
+          showClass: {
+            popup: `
                 animate__animated
                 animate__fadeInUp
                 animate__faster
-              `
-            },
-            hideClass: {
-              popup: `
+              `,
+          },
+          hideClass: {
+            popup: `
                 animate__animated
                 animate__fadeOutDown
                 animate__faster
-              `
-            }
+              `,
+          },
         });
-        navigate(from ,{replace : true});
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error.message);
@@ -60,6 +60,23 @@ const Login = () => {
     } else {
       setDisabled(true);
     }
+  };
+
+  //   Handle Google Sign In
+  const handleGoogleSinIn = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Sign Up Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate(from, { replace: true });
+      })
+      .catch((err) => console.error(err.message));
   };
 
   useEffect(() => {
@@ -141,7 +158,7 @@ const Login = () => {
                   </p>
                   <div className="flex justify-center items-center space-x-5 mt-5 text-xl text-[#444444]">
                     <FaFacebook />
-                    <FaGoogle />
+                    <FaGoogle onClick={handleGoogleSinIn} />
                     <FaGithub />
                   </div>
                 </div>

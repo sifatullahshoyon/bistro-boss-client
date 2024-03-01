@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import authentication from "../../assets/others/authentication1.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
-  const { createUser, updatedUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { createUser, updatedUserProfile, googleLogin } =
+    useContext(AuthContext);
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -23,12 +25,12 @@ const SignUp = () => {
         updatedUserProfile(name)
           .then(() => {
             Swal.fire({
-                position: "top-center",
-                icon: "success",
-                title: "Sign Up Successfully",
-                showConfirmButton: false,
-                timer: 1500
-              });
+              position: "top-center",
+              icon: "success",
+              title: "Sign Up Successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
           })
           .catch((error) => {
             console.error(error.message);
@@ -37,6 +39,23 @@ const SignUp = () => {
       .catch((error) => {
         console.error(error.message);
       });
+  };
+
+  //   Handle Google Sing Up
+  const handleGoogleSinUp = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Sign Up Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/");
+      })
+      .catch((err) => console.error(err.message));
   };
 
   return (
@@ -113,7 +132,7 @@ const SignUp = () => {
                 </p>
                 <div className="flex justify-center items-center space-x-5 mt-5 text-xl text-[#444444]">
                   <FaFacebook />
-                  <FaGoogle />
+                  <FaGoogle onClick={handleGoogleSinUp} />
                   <FaGithub />
                 </div>
               </div>
