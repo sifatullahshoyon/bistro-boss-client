@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import shoppingIcon from "../../../../../assets/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png";
+// import shoppingIcon from "../../../../../assets/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png";
 import { AuthContext } from "../../../../../providers/AuthProvider";
+import useCart from "../../../../../hooks/useCart";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const [cart] = useCart();
   const handleLogout = () => {
     logOut()
-    .then(() => {})
-    .catch((error) => console.error(error.message));
+      .then(() => {})
+      .catch((error) => console.error(error.message));
   };
   const navItem = (
     <>
@@ -58,7 +60,12 @@ const Navbar = () => {
           to="/"
           // className={({ isActive }) => (isActive ? "default" : "active")}
         >
-          <img src={shoppingIcon} className="h-8" alt="" />
+          <button className="btn relative h-8">
+            <FaShoppingCart className="text-3xl text-white" />
+            <div className="badge badge-success absolute bottom-0 right-0">
+              {cart?.length || 0}
+            </div>
+          </button>
         </NavLink>
       </li>
       {user ? (
