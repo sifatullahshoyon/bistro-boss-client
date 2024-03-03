@@ -33,7 +33,7 @@ const Navbar = () => {
       </li>
       <li className="mr-2">
         <NavLink
-          to="/"
+          to="/dashboard"
           className={({ isActive }) => (isActive ? "default" : "active")}
         >
           DASHBOARD
@@ -57,7 +57,7 @@ const Navbar = () => {
       </li>
       <li className="mr-2">
         <NavLink
-          to="/"
+          to="/dashboard/my-cart"
           // className={({ isActive }) => (isActive ? "default" : "active")}
         >
           <button className="btn relative h-8">

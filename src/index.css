@@ -18,7 +18,16 @@
   border-radius: 0 200px 200px 200px;
 }
 
-@layer components {
+.drawer-side a.active {
+  color: white;
+  background-color: transparent;
+}
+
+.drawer-side a {
+  background-color: transparent;
+}
+
+/* @layer components {
   .active {
     @apply text-[#EEFF25] font-extrabold text-xl;
   }
@@ -26,4 +35,4 @@
   .default {
     @apply text-white font-extrabold text-xl;
   }
-}
+} */
