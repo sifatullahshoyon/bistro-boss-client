@@ -6,8 +6,10 @@ import { SlCalender } from "react-icons/sl";
 import { VscPreview } from "react-icons/vsc";
 import { MdMenu } from "react-icons/md";
 import { GiShoppingBag } from "react-icons/gi";
+import useCart from "../hooks/useCart";
 
 const Dashboard = () => {
+    const [cart] = useCart();
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -61,6 +63,9 @@ const Dashboard = () => {
           <li className="uppercase text-solid font-bold font-cinzel text-base">
             <NavLink to="/dashboard/my-cart">
               <FaShoppingCart /> My Cart
+              <span className="badge badge-success">
+              {cart?.length || 0}
+            </span>
             </NavLink>
           </li>
           <li className="uppercase text-solid font-bold font-cinzel text-base">
@@ -82,17 +87,17 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li className="uppercase text-solid font-bold font-cinzel text-base">
-            <NavLink to="/dashboard/menu">
+            <NavLink to="/menu">
               <MdMenu /> Menu
             </NavLink>
           </li>
           <li className="uppercase text-solid font-bold font-cinzel text-base">
-            <NavLink to="/dashboard/shop">
+            <NavLink to="/order/salad">
               <GiShoppingBag /> shop
             </NavLink>
           </li>
           <li className="uppercase text-solid font-bold font-cinzel text-base">
-            <NavLink to="/dashboard/contact">
+            <NavLink to="/contact">
               <FaEnvelope /> contact
             </NavLink>
           </li>

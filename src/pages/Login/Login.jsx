@@ -137,7 +137,7 @@ const Login = () => {
                     placeholder="Type Here"
                     className="input input-bordered bg-white"
                     onBlur={handleValidateCaptcha}
-                    // required
+                    required
                   />
                 </div>
                 <div className="form-control mt-6">
@@ -146,8 +146,8 @@ const Login = () => {
                     type="submit"
                     className="btn btn-primary bg-[#D1A054] hover:bg-[#D1A054] border-0 bg-opacity-70 text-white font-bold text-xl"
                     value="Login"
-                    // disabled={disabled}
-                    disabled={false}
+                    disabled={disabled}
+                    // disabled={false}
                   />
                 </div>
                 <div className="form-control mt-6">
